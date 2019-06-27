@@ -1,0 +1,42 @@
+
+$color_storm_dust_approx: #606262;
+$color_bon_jour_approx: #dde1e3;
+
+.popover-title {
+        letter-spacing: normal;
+}
+.warmoo-pro-pop-stress {
+        font-weight: bold;
+}
+.greypro-icon {
+        color: $color_storm_dust_approx;
+        font-size: 1.2em;
+        position: relative;
+        top: -2px;
+        margin-right: 2px;
+}
+.warmoo-pro-pop-stress-main {
+        font-weight: bold;
+        font-size: 1.2em;
+        letter-spacing: -1px;
+}
+.warmoo-pro-pop-pic {
+        width: 110px;
+        float: left;
+        img {
+                border: 1px solid $color_bon_jour_approx;
+                margin-bottom: 10px;
+        }
+}
+.warmoo-pro-po-lister {
+        margin-left: 110px;
+        margin-top: 5px;
+        li {
+                list-style-type: none;
+        }
+}
+.warmoo-pro-pop-label {
+        font-size: .9em;
+        color: $color_storm_dust_approx;
+}
+

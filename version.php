@@ -2,7 +2,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = '2019041507';
+$plugin->version = '2019041511';
 $plugin->requires = '2018112800';
 $plugin->component = 'theme_boostwarwick';
 
