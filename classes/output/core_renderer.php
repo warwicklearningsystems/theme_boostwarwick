@@ -36,7 +36,7 @@ class user_picture_with_popover extends \user_picture {
     }
 
     if ($needrec) {
-      $this->user = $DB->get_record('user', array('id'=>$user->id), self::fields('', array('idnumber')), MUST_EXIST);
+      $this->user = $DB->get_record('user', array('id'=>$user->id), self::fields('', array('idnumber', 'department')), MUST_EXIST);
     } else {
       $this->user = clone($user);
     }
@@ -264,23 +264,49 @@ class core_renderer extends \theme_boost\output\core_renderer  {
       $universityId = substr($universityId,2);
     }
 
-    $title = "<i class='fa fa-user fa-lg greypro-icon'></i> <span class='warmoo-pro-pop-stress-main' data-trigger='hover' data-html='true' >$user->firstname $user->lastname</span>";
+    // Generate title
+    $title = html_writer::tag('i', '', array('class' => 'fa fa-user fa-lg greypro-icon'));
+    $title .= html_writer::tag('span', $user->firstname . " " . $user->lastname,
+      array('class' => 'warmoo-pro-pop-stress-main',
+      'data-trigger' => 'hover',
+      'data-html' => 'true'
+      ));
 
+    // Image HTML (for within popup)
     $userimg = html_writer::empty_tag('img', array('width'=>'90', 'height'=>'90', 'src'=>$src, alt=>'Picture of'));
 
     $dataContent = html_writer::div($userimg, 'warmoo-pro-pop-pic userpicture', array('data-trigger' => 'hover', 'data-html' => 'true'));
 
-    $dataContent .= "<div>";
-    $dataContent .= "<ul class='warmoo-pro-po-lister list-unstyled'>";
+    $dataContent .= html_writer::start_div();
+    $dataContent .= html_writer::start_tag('ul', array('class' => 'warmoo-pro-po-lister list-unstyled'));
 
-    $dataContent .= "<li><span class='warmoo-pro-pop-label'>Name: </span><span class='warmoo-pro-pop-stress'>$user->firstname $user->lastname</span></li>";
-    $dataContent .= "<li><span class='warmoo-pro-pop-label'>University ID: </span><span class='warmoo-pro-pop-stress'>$user->idnumber</span></li>";
-    $dataContent .= "<li><a  class='btn btn-primary btn-moo-blue tab-prof-but' href='https://tabula.warwick.ac.uk/profiles/view/" . $universityId . "' target='_blank' role='button' >";
-    $dataContent .= "<i class='fa fa-external-link-square'></i> Tabula Profile</a></li>";
+    // Name
+    //$dataContent .= html_writer::start_tag('li');
+    //$dataContent .= html_writer::tag('span', "Name: ", array('class' => 'warmoo-pro-pop-label'));
+    //$dataContent .= html_writer::tag('span', $user->firstname . " " . $user->lastname, array('class' => 'warmoo-pro-pop-stress'));
+    //$dataContent .= html_writer::end_tag('li');
 
-    $dataContent .= "</ul>";
+    // University ID
+    $dataContent .= html_writer::start_tag('li');
+    $dataContent .= html_writer::tag('span', "University ID: ", array('class' => 'warmoo-pro-pop-label'));
+    $dataContent .= html_writer::tag('span', $user->idnumber, array('class' => 'warmoo-pro-pop-stress'));
+    $dataContent .= html_writer::end_tag('li');
 
-    $dataContent .= "</div>";
+    // Department
+    $dataContent .= html_writer::start_tag('li');
+    $dataContent .= html_writer::tag('span', "Department: ", array('class' => 'warmoo-pro-pop-label'));
+    $dataContent .= html_writer::tag('span', $user->department, array('class' => 'warmoo-pro-pop-stress'));
+    $dataContent .= html_writer::end_tag('li');
+
+    // Tabula button
+    $dataContent .= html_writer::start_tag('li');
+    $dataContent .= html_writer::tag('a', "<i class='fa fa-external-link-square'></i> Tabula Profile",
+      array('class' => 'btn btn-primary btn-moo-blue tab-prof-but', 'href' => 'https://tabula.warwick.ac.uk/profiles/view/' . $universityId,
+        'target' => '_blank', 'role' => 'button'));
+    $dataContent .= html_writer::end_tag('li');
+
+    $dataContent .= html_writer::end_tag('ul');
+    $dataContent .= html_writer::end_div();
 
     $attributes2 = array('tabindex'=>0, 'data-toggle'=>'popover', 'data-content'=>$dataContent, 'data-html'=>'true', 'data-trigger'=>'hover', 'title'=>"$title");
 
@@ -307,3 +333,4 @@ class core_renderer extends \theme_boost\output\core_renderer  {
 
 
 
+;
