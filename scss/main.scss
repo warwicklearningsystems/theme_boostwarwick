@@ -40,3 +40,137 @@ $color_bon_jour_approx: #dde1e3;
         color: $color_storm_dust_approx;
 }
 
+
+/* Footer */
+
+.id7-page-footer .id7-site-footer, .id7-page-footer .id7-app-footer {
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        padding-top: 20px;
+}
+
+.id7-page-footer .id7-site-footer {
+        background: #d3d3d3;
+        color: #383838;
+}
+
+.id7-page-footer .id7-app-footer {
+        background: #204f79;
+        color: white;
+}
+
+.id7-page-footer .id7-app-footer .id7-footer-utility ul {
+        padding-left: 0;
+        list-style: none;
+        margin: 0;
+}
+
+.id7-page-footer .id7-app-footer .id7-footer-utility ul > li {
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+}
+
+.id7-page-footer .id7-app-footer .id7-footer-utility ul > li:first-child::before {
+        content: none;
+        display: none;
+}
+
+.id7-page-footer .id7-app-footer .id7-footer-utility ul > li::before {
+        content: '|';
+        margin-left: 0.1em;
+        margin-right: 0.2em;
+        color: #777777;
+}
+
+.id7-page-footer .id7-app-footer {
+        font-size: 85%;
+}
+
+.id7-page-footer .id7-site-footer {
+        color: #383838;
+}
+
+.id7-page-footer .id7-site-footer a, .id7-page-footer .id7-site-footer a:link, .id7-page-footer .id7-site-footer a:visited {
+        -webkit-text-decoration-color: #747474;
+        text-decoration-color: #747474;
+}
+
+.id7-page-footer .id7-site-footer a, .id7-page-footer .id7-site-footer a:link, .id7-page-footer .id7-site-footer a:visited {
+        color: #383838;
+}
+
+.id7-page-footer .id7-app-footer a, .id7-page-footer .id7-app-footer a:link, .id7-page-footer .id7-app-footer a:visited {
+        -webkit-text-decoration-color: #ffffff;
+        text-decoration-color: #ffffff;
+        color: #ffffff;
+}
+
+.id7-page-footer.id7-footer-coloured .id7-app-footer .id7-logo-bleed::before, .id7-page-footer.id7-footer-coloured .id7-app-footer .id7-logo-bleed::after {
+        border-top-color: #d3d3d3;
+}
+
+footer .id7-site-footer .id7-logo-bleed, footer .id7-app-footer .id7-logo-bleed {
+        position: relative;
+        height: 40px;
+        width: 81.2392px;
+        position: absolute;
+        top: 0px;
+        right: 10%;
+}
+
+footer .id7-site-footer .id7-logo-bleed::after, footer .id7-app-footer .id7-logo-bleed::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 22.82px solid transparent;
+        border-right: 22.82px solid transparent;
+        border-top: 40px solid white;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+}
+
+footer .id7-site-footer .id7-logo-bleed::before, footer .id7-app-footer .id7-logo-bleed::before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 22.82px solid transparent;
+        border-right: 22.82px solid transparent;
+        border-top: 40px solid white;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+}
+
+footer .id7-site-footer .id7-logo-bleed + *, footer .id7-app-footer .id7-logo-bleed + * {
+
+        margin-top: 20px;
+
+}
+
+//footer .id7-app-footer .id7-footer-utility {
+//        margin-bottom: 20px;
+//}
+
+footer p {
+        margin-top: 0;
+        margin-bottom: 0;
+}
+
+footer .id7-app-footer .id7-logo-bleed + * {
+        margin-top: 20px;
+}
+
+
+footer {
+        font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+        color: #383838;
+}
