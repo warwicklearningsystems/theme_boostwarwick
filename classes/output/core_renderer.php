@@ -43,7 +43,7 @@ class user_picture_with_popover extends \user_picture {
 
     $this->link = $userpicture->link;
     $this->size = $userpicture->size;
-    $this->$alttext = $userpicture->alttext;
+    $this->alttext = $userpicture->alttext;
     $this->includefullname = $userpicture->includefullname;
 
     //parent::__construct($userpicture->user);
@@ -266,7 +266,7 @@ class core_renderer extends \theme_boost\output\core_renderer  {
 
     // Generate title
     $title = html_writer::tag('i', '', array('class' => 'fa fa-user fa-lg greypro-icon'));
-    $title .= html_writer::tag('span', $user->firstname . " " . $user->lastname,
+    $title .= html_writer::tag('span', " " . $user->firstname . " " . $user->lastname,
       array('class' => 'warmoo-pro-pop-stress-main',
       'data-trigger' => 'hover',
       'data-html' => 'true'
