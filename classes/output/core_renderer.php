@@ -273,7 +273,7 @@ class core_renderer extends \theme_boost\output\core_renderer  {
       ));
 
     // Image HTML (for within popup)
-    $userimg = html_writer::empty_tag('img', array('width'=>'90', 'height'=>'90', 'src'=>$src, alt=>'Picture of'));
+    $userimg = html_writer::empty_tag('img', array('width'=>'90', 'height'=>'90', 'src'=>$src, 'alt'=>'Picture of'));
 
     $dataContent = html_writer::div($userimg, 'warmoo-pro-pop-pic userpicture', array('data-trigger' => 'hover', 'data-html' => 'true'));
 
