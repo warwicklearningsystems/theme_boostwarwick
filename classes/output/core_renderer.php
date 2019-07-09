@@ -293,10 +293,12 @@ class core_renderer extends \theme_boost\output\core_renderer  {
     $dataContent .= html_writer::end_tag('li');
 
     // Department
-    $dataContent .= html_writer::start_tag('li');
-    $dataContent .= html_writer::tag('span', "Department: ", array('class' => 'warmoo-pro-pop-label'));
-    $dataContent .= html_writer::tag('span', $user->department, array('class' => 'warmoo-pro-pop-stress'));
-    $dataContent .= html_writer::end_tag('li');
+    if(isset($user->department)) {
+      $dataContent .= html_writer::start_tag('li');
+      $dataContent .= html_writer::tag('span', "Department: ", array('class' => 'warmoo-pro-pop-label'));
+      $dataContent .= html_writer::tag('span', $user->department, array('class' => 'warmoo-pro-pop-stress'));
+      $dataContent .= html_writer::end_tag('li');
+    }
 
     // Tabula button
     $dataContent .= html_writer::start_tag('li');

@@ -1,0 +1,60 @@
+{{!
+    Page navbar.
+}}
+
+<nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="{{#str}}sitemenubar, admin{{/str}}">
+
+    <div class="id7-header">
+
+        <div class="id7-utility-bar">
+
+            <div class="id7-utility-links pull-right">
+            <ul class="nav navbar-nav ml-auto">
+
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    {{{ output.user_menu }}}
+                </li>
+            </ul>
+            </div>
+
+        </div>
+
+        <div class="id7-masthead">
+
+            <a class="id7-logo-below" href="http://warwick.ac.uk" title="Warwick homepage">
+                <img id="warwick-id7-logo-top" src="/theme/boostwarwick/pix/warwick-logo-title-only.svg" alt="Warwick">
+            </a>
+
+            <div data-region="drawer-toggle" class="drawer-toggle d-inline-block mr-5">
+                <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}"
+                aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-light bg-gray"
+                data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}
+                <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
+            </div>
+            <div class="right-hand-options">
+
+                <div class="search-box">
+                    <form class="search-input-form expanded" action="/course/search.php" >
+                        <label for="id_search_box" class="accesshide">Enter your search query</label>
+                        <div class="search-box-input-wrapper">
+                            <span class="icon fa fa-search fa-fw" title="Search" aria-label="Search"></span>
+                            <input name="search" placeholder="Search..." size="20" tabindex="-1" id="id_search_box" class="form-control" type="text">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="notifications-box">
+                    <li class="nav-item">{{{ output.navbar_plugin_output }}}</li>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</nav>
+

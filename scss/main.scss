@@ -175,7 +175,150 @@ footer {
         color: #383838;
 }
 
-
 .no-overflow .row {
         max-width:100%;
 }
+
+/* Header */
+
+.navbar {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        height: 85px;
+        max-height: 85px;
+}
+
+
+// We're making the navbar bigger, so need to shift other things down....
+
+#page {
+        margin-top: 85px;
+}
+
+[data-region="drawer"]
+{
+        top: 85px;
+        height: calc(100% - 85px);
+}
+
+.message-drawer {
+        top: 85px;
+        height: calc(100% - 85px);
+}
+
+/* User menu style alteration */
+
+.user-menu {
+        font-size: 10px;
+}
+
+.usermenu .login {
+        line-height: 1rem;
+        color: rgb(255, 255, 255)
+}
+
+.usermenu .login a {
+        color: rgb(250, 250, 250);
+}
+
+.usermenu .login a:hover, .usermenu .login a:focus {
+        color: rgb(250, 250, 250);
+        text-decoration: underline;
+}
+
+.avatars {
+        display: none;
+}
+
+.userbutton .usertext {
+        color: rgb(255, 255, 255)
+}
+
+.dropdown-toggle {
+        color: rgb(255, 255, 255)
+}
+
+.id7-header {
+        vertical-align: top;
+        width: 100%;
+        height: 100%;
+}
+
+.id7-utility-bar {
+        vertical-align: top;
+        width: 100%;
+        background: #204f79;
+        max-height: 40px;
+        //position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        height: 24px;
+        line-height: 24px;
+
+}
+
+.id7-masthead {
+        //display: inline-block;
+}
+
+.id7-logo-below {
+        float: left;
+        position: relative;
+        margin-left: 20px;
+        display: inline-block;
+
+}
+
+#warwick-id7-logo-top {
+        height: 50px;
+}
+
+.drawer-toggle {
+        position: relative;
+        left: 30px;
+        top: 5px;
+        vertical-align: middle;
+
+}
+
+.right-hand-options {
+        float: right;
+        align: top;
+        padding-top: 5px;
+        display: inline-block;
+}
+
+.search-box {
+        float: left;
+        clear: none;
+        display: inline-block;
+}
+
+.search-box input {
+        text-indent: 32px;
+}
+
+.search-box-input-wrapper {
+        display:inline-block;
+        position: relative
+}
+
+.search-box-input-wrapper .fa-search {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+}
+
+.notifications-box {
+        float: right;
+        clear: none;
+}
+
+// Don't display list item for notifications and messages
+
+.notifications-box .nav-item {
+        list-style-type:none;
+}
+
