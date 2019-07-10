@@ -176,6 +176,54 @@ class user_picture_with_popover extends \user_picture {
 class core_renderer extends \theme_boost\output\core_renderer  {
 
   /**
+   * Wrapper for header elements.
+   *
+   * @return string HTML to display the main header.
+   */
+  public function full_header() {
+    global $PAGE, $COURSE;
+
+    $header = new \stdClass();
+    $header->settingsmenu = $this->context_header_settings_menu();
+    $header->contextheader = $this->context_header();
+    $header->hasnavbar = empty($PAGE->layout_options['nonavbar']);
+    $header->navbar = $this->navbar();
+    $header->pageheadingbutton = $this->page_heading_button();
+    $header->courseheader = $this->course_header();
+
+    $header->courseid = $COURSE->id;
+
+    // Is this course hidden?
+    if ( (strpos($PAGE->url, '/course/view.php') == true) &&
+         ($COURSE->visible == false)) {
+      $header->hiddencourse = TRUE;
+    } else {
+      $header->hiddencourse = FALSE;
+    }
+
+    // Is this for a previous academic year?
+    $header->previousacademicyear = FALSE;
+    $matches=explode("\n", str_replace("\r","", get_config('theme_boostwarwick', 'currentyearpattern')));
+    preg_match('#\d{2}/\d{2}#', $COURSE->idnumber, $regexmatch);
+    if(isset($regexmatch[0])) {
+
+      if((strpos($PAGE->url, '/course/view.php') == true) &&
+        ($regexmatch[0]!=false) &&
+        (in_array($regexmatch[0], $matches) == false)){
+          $header->previousacademicyear = TRUE;
+			}
+    }
+
+    $header->displayalertmessage = FALSE;
+    if ( get_config('theme_boostwarwick', 'alertmessageenabled') == TRUE ) {
+      $header->displayalertmessage = TRUE;
+      $header->alertmessage = get_config('theme_boostwarwick', 'alertmessage');
+    }
+
+    return $this->render_from_template('theme_boostwarwick/header', $header);
+  }
+
+  /**
    * Internal implementation of user image rendering.
    *
    * @param user_picture $userpicture

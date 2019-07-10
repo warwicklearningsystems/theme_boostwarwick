@@ -33,6 +33,7 @@
 
 <header id="page-header" class="row">
     <div class="col-12 pt-3 pb-3">
+
         <div class="card {{^contextheader}}border-0 bg-transparent{{/contextheader}}">
             <div class="card-body {{^contextheader}}p-2{{/contextheader}}">
                 <div class="d-flex">
@@ -48,6 +49,12 @@
                     </div>
                     {{/settingsmenu}}
                 </div>
+                {{#displayalertmessage}}
+                <div class="alert alert-info alert-block fade in " role="alert" data-aria-autofocus="true" tabindex="0">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <strong>{{ alertmessage }}</strong>
+                </div>
+                {{/displayalertmessage}}
                 <div class="d-flex flex-wrap">
                     {{#hasnavbar}}
                     <div id="page-navbar">
@@ -60,6 +67,23 @@
                     <div id="course-header">
                         {{{courseheader}}}
                     </div>
+                </div>
+                <div class="course-information-header">
+                    {{#hiddencourse}}
+                    <div class="alert alert-warning alert-block fade in " role="alert" data-aria-autofocus="true" tabindex="0">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        {{# str }} thiscourseishidden, theme_boostwarwick {{/ str }} <a href="/course/edit.php?id= {{courseid}}"> {{# str }} thiscourseishiddenlink, theme_boostwarwick {{/str}}
+                    </div>
+                    {{/hiddencourse}}
+
+                    {{#previousacademicyear}}
+                    <div class="alert alert-info alert-block fade in " role="alert" data-aria-autofocus="true" tabindex="0">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        {{# str }} notcurrentyeartext, theme_boostwarwick {{/ str }}
+                    </div>
+                    {{/previousacademicyear}}
                 </div>
             </div>
         </div>
