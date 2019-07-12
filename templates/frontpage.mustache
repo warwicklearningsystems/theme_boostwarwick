@@ -4,7 +4,7 @@
 
 <div id="page-wrapper" class="frontpage">
 
-    {{{ output.standard_top_of_body_html }}}
+
 
     <div id="page" class="container-fluid">
              <div class="frontpage-card frontpage-card-container">
@@ -13,7 +13,7 @@
                 <div class="frontpage-card-text">
                     {{# str }} frontpagecardtext, theme_boostwarwick {{/ str }}
                 </div>
-                <a class="btn btn-lg btn-primary btn-block btn-signin" href="/login/index.php">Sign in</a>
+                <a class="btn btn-lg btn-primary btn-block btn-signin" href="{{{ loginbuttonlink }}}">{{{ loginbuttontext }}}</a>
             </div>
 
             <div id="page-content" class="row pb-3">
@@ -22,16 +22,10 @@
             </div>
         </div>
     </div>
-    {{{ output.standard_after_main_region_html }}}
+
 
 
 </div>
 
 </body>
 </html>
-{{#js}}
-require(['theme_boost/loader']);
-require(['theme_boost/drawer'], function(mod) {
-    mod.init();
-});
-{{/js}}

@@ -29,8 +29,12 @@ require_once($CFG->libdir . '/behat/lib.php');
 
 if (isloggedin()) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
+    $loginbuttonlink = "/my/";
+    $loginbuttontext = "Go to dashboard";
 } else {
     $navdraweropen = false;
+    $loginbuttonlink = "/login/index.php";
+    $loginbuttontext = "Sign in";
 }
 $extraclasses = [];
 if ($navdraweropen) {
@@ -48,7 +52,9 @@ $templatecontext = [
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
-    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'loginbuttonlink' => $loginbuttonlink,
+    'loginbuttontext' => $loginbuttontext
 ];
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
