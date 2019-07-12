@@ -381,8 +381,8 @@ footer {
         margin: auto;
 
         // Give some space
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 25px;
+        padding-bottom: 25px;
 }
 
 .frontpage-card-text {
@@ -399,7 +399,6 @@ footer {
         border-top: 25px;
 
         font-weight: 700;
-        font-size: 14px;
         height: 36px;
         line-height: 36px;
 
@@ -412,4 +411,10 @@ footer {
         -moz-box-shadow: 0px 2px 2px rgb(66, 61, 22);
         -webkit-box-shadow: 0px 2px 2px rgb(66, 61, 22);
         box-shadow: 0px 2px 2px rgb(66, 61, 22);
+}
+
+
+// If we don't do this, margin is introduced for the nav drawer
+#page-site-index.pagelayout-frontpage {
+        margin-left: 0px !important;
 }
