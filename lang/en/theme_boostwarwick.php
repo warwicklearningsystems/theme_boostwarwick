@@ -16,4 +16,6 @@ $string['alertmessage_desc'] = 'Enter an alert message';
 $string['alertmessageenabled'] = 'Check box to show alert message below';
 $string['alertmessageenabled_desc'] = 'Default dont show message';
 
+$string['frontpagecardtext'] = 'Moodle is the on-line teaching and learning platform for the University of Warwick.';
+
 $string['configtitle'] = 'Boost Warwick';
