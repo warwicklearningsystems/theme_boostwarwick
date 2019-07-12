@@ -16,6 +16,18 @@ $THEME->scss = function($theme) {
     return theme_boostwarwick_get_main_scss_content($theme);
 };
 
+$THEME->layouts = [
+
+  // The site home page.
+  'frontpage' => array(
+    'file' => 'frontpage.php',
+    'regions' => array(),
+    'options' => array('nonavbar' => true),
+  )
+
+];
+
+
 $THEME->yuicssmodules = array();
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';
