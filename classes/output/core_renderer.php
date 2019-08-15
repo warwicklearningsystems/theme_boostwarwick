@@ -8,6 +8,8 @@ use moodle_url;
 use moodle_page;
 use renderer_base;
 use coding_exception;
+use context_user;
+use context_course;
 
 class user_picture_with_popover extends \user_picture {
 
