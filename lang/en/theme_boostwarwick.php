@@ -3,7 +3,7 @@
 $string['pluginname'] = 'boostwarwick';
 $string['choosereadme'] = 'A customised version of the Boost theme for Warwick';
 
-$string['coursefrozen'] = 'This course is now archived - it is no longer to possible to participate or edit content.';
+$string['coursefrozen'] = 'This course is now archived - it is no longer possible to participate or edit content.';
 $string['notcurrentyeartext'] = 'This course is assigned to a previous academic year.';
 $string['thiscourseishidden'] = 'This course is currently hidden from students. You can make the course visible via: ';
 $string['thiscourseishiddenlink'] = 'Course settings';
