@@ -216,6 +216,13 @@ class core_renderer extends \theme_boost\output\core_renderer  {
 			}
     }
 
+    // Is this course frozen?
+    $header->coursefrozen = FALSE;
+    $coursecontext = context_course::instance($COURSE->id);
+    if( $coursecontext->locked ) {
+      $header->coursefrozen = TRUE;
+    }
+
     $header->displayalertmessage = FALSE;
     if ( get_config('theme_boostwarwick', 'alertmessageenabled') == TRUE ) {
       $header->displayalertmessage = TRUE;

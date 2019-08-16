@@ -84,6 +84,14 @@
                         {{# str }} notcurrentyeartext, theme_boostwarwick {{/ str }}
                     </div>
                     {{/previousacademicyear}}
+
+                    {{#coursefrozen}}
+                    <div class="alert alert-danger alert-block fade in " role="alert" data-aria-autofocus="true" tabindex="0">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        {{# str }} coursefrozen, theme_boostwarwick {{/ str }}
+                    </div>
+                    {{/coursefrozen}}
                 </div>
             </div>
         </div>
