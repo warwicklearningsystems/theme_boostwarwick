@@ -23,7 +23,12 @@ $THEME->layouts = [
     'file' => 'frontpage.php',
     'regions' => array(),
     'options' => array('nonavbar' => true),
-  )
+  ),
+  'maintenance' => array(
+    'file' => 'maintenance.php',
+    'regions' => array(),
+    'options' => array('nonavbar' => true),
+  ),
 
 ];
 
