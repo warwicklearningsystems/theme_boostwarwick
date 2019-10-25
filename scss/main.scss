@@ -418,3 +418,9 @@ footer {
 #page-site-index.pagelayout-frontpage {
         margin-left: 0px !important;
 }
+
+// MOO-1395 - ensure Echo button is centered
+.echolinkcontainer {
+        text-align: center;
+        display: block;
+}
