@@ -17,6 +17,27 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_configtextarea('theme_boostwarwick/alertmessage', get_string('alertmessage','theme_boostwarwick'), get_string('alertmessage_desc', 'theme_boostwarwick'), 'Moodle will be unavailable on XX due to an upgrade', PARAM_NOTAGS);
     $page->add($setting);
 
+    // Info message settings
+    $setting = new admin_setting_configcheckbox('theme_boostwarwick/infomessageenabled',
+        get_string('infomessageenabled','theme_boostwarwick'),
+        get_string('infomessageenabled_desc',
+        'theme_boostwarwick'), 0);
+    $page->add($setting);
+
+    $setting = new admin_setting_configtextarea('theme_boostwarwick/infomessage',
+        get_string('infomessage','theme_boostwarwick'),
+        get_string('infomessage_desc', 'theme_boostwarwick'),
+        'Information message.',
+        PARAM_NOTAGS);
+    $page->add($setting);
+
+    $setting = new admin_setting_configtextarea('theme_boostwarwick/infomessageroles',
+        get_string('infomessage_roles','theme_boostwarwick'),
+        get_string('infomessage_roles_desc', 'theme_boostwarwick'),
+        'Undergraduate',
+        PARAM_NOTAGS);
+    $page->add($setting);
+
     // Academic year pattern
     $setting = new admin_setting_configtextarea('theme_boostwarwick/currentyearpattern',
       get_string('currentyearpatternname','theme_boostwarwick'),
