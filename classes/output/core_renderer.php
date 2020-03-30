@@ -183,7 +183,7 @@ class core_renderer extends \theme_boost\output\core_renderer  {
    * @return string HTML to display the main header.
    */
   public function full_header() {
-    global $PAGE, $COURSE;
+    global $PAGE, $COURSE, $USER;
 
     $header = new \stdClass();
     $header->settingsmenu = $this->context_header_settings_menu();
@@ -227,6 +227,18 @@ class core_renderer extends \theme_boost\output\core_renderer  {
     if ( get_config('theme_boostwarwick', 'alertmessageenabled') == TRUE ) {
       $header->displayalertmessage = TRUE;
       $header->alertmessage = get_config('theme_boostwarwick', 'alertmessage');
+    }
+
+    $header->displayinfomessage = FALSE;
+    if ( get_config('theme_boostwarwick', 'infomessageenabled') == TRUE ) {
+        // Extract the list of roles
+        $roles=explode("\n", str_replace("\r","", get_config('theme_boostwarwick', 'infomessageroles')));
+
+        // Is the user's desgination (stored in phone2) one of the allowed roles?
+        if( in_array($USER->phone2, $roles) ) {
+            $header->displayinfomessage = TRUE;
+            $header->infomessage = get_config('theme_boostwarwick', 'infomessage');
+        }
     }
 
     return $this->render_from_template('theme_boostwarwick/header', $header);

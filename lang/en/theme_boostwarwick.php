@@ -17,6 +17,15 @@ $string['alertmessage_desc'] = 'Enter an alert message';
 $string['alertmessageenabled'] = 'Check box to show alert message below';
 $string['alertmessageenabled_desc'] = 'Default dont show message';
 
+$string['infomessage'] = 'Message to be displayed when info box enabled';
+$string['infomessage_desc'] = 'Enter an info message';
+
+$string['infomessageenabled'] = 'Check box to show info message below';
+$string['infomessageenabled_desc'] = 'Default dont show message';
+
+$string['infomessage_roles'] = 'Roles that can see message';
+$string['infomessage_roles_desc'] = 'Enter list of roles which can see message';
+
 $string['frontpagecardtext'] = 'University of Warwick online teaching and learning platform';
 
 $string['configtitle'] = 'Boost Warwick';
