@@ -50,11 +50,17 @@
                     {{/settingsmenu}}
                 </div>
                 {{#displayalertmessage}}
-                <div class="alert alert-info alert-block fade in " role="alert" data-aria-autofocus="true" tabindex="0">
+                <div class="alert alert-danger alert-block fade in " role="alert" data-aria-autofocus="true" tabindex="0">
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                         <strong>{{ alertmessage }}</strong>
                 </div>
                 {{/displayalertmessage}}
+                {{#displayinfomessage}}
+                <div class="alert alert-info alert-block fade in " role="alert" data-aria-autofocus="true" tabindex="0">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        <strong>{{ infomessage }}</strong>
+                </div>
+                {{/displayinfomessage}}
                 <div class="d-flex flex-wrap">
                     {{#hasnavbar}}
                     <div id="page-navbar">
