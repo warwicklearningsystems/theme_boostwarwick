@@ -317,13 +317,29 @@ footer {
 .notifications-box {
         float: right;
         clear: none;
+        display: inline;
 }
 
 // Don't display list item for notifications and messages
 
-.notifications-box.nav-item {
+.notifications-box > li {
         list-style-type:none;
+        display: inline;
+        float: left;
 }
+
+#nav-notification-popover-container > .nav-link {
+        display: inline;
+}
+
+.notifications-box > .nav-item > div {
+        display: inline;
+}
+
+[data-region=right-hand-drawer].drawer {
+        top: 85px;
+}
+
 
 // Moodle tags
 
