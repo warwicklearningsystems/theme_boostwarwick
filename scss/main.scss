@@ -52,11 +52,6 @@ $color_bon_jour_approx: #dde1e3;
         padding-top: 20px;
 }
 
-#moodle-page-footer.id7-page-footer{ 
-        position: relative; 
-        top: 100%; 
-}
-
 .id7-page-footer .id7-site-footer {
         background: #d3d3d3;
         color: #383838;
@@ -193,6 +188,7 @@ footer {
         padding-bottom: 0px;
         height: 85px;
         max-height: 85px;
+        z-index: 1018!important;
 }
 
 
@@ -444,4 +440,8 @@ footer {
 .echolinkcontainer {
         text-align: center;
         display: block;
+}
+
+#quiz-timer-wrapper {
+    top: 90px!important;
 }
