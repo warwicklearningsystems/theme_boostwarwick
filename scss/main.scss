@@ -442,10 +442,12 @@ footer {
         display: block;
 }
 
+// MOO-2265
 #quiz-timer-wrapper {
     top: 90px!important;
 }
 
+// MOO-2251
 [data-region=right-hand-drawer].drawer {
     padding-bottom: 30px!important;
 }
