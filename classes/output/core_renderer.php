@@ -194,6 +194,7 @@ class core_renderer extends \theme_boost\output\core_renderer  {
     $header->courseheader = $this->course_header();
 
     $header->courseid = $COURSE->id;
+    $header->cid = $COURSE->id;
 
     // Is this course hidden?
     if ( (strpos($PAGE->url, '/course/view.php') == true) &&
