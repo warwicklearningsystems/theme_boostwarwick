@@ -29,3 +29,6 @@ $string['infomessage_roles_desc'] = 'Enter list of roles which can see message';
 $string['frontpagecardtext'] = 'University of Warwick online teaching and learning platform';
 
 $string['configtitle'] = 'Boost Warwick';
+
+
+$string['thiscourseishiddencap'] = 'This course is currently hidden from students.';

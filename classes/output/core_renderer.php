@@ -196,6 +196,15 @@ class core_renderer extends \theme_boost\output\core_renderer  {
     $header->courseid = $COURSE->id;
     $header->cid = $COURSE->id;
 
+    $updtcontext = context_course::instance($COURSE->id, IGNORE_MISSING);
+    $canupdatecourse = has_capability('moodle/course:update', $updtcontext);
+
+    if ($canupdatecourse) {
+        $header->canupdatecourse = TRUE;
+    } else {
+        $header->canupdatecourse = FALSE;
+    }
+
     // Is this course hidden?
     if ( (strpos($PAGE->url, '/course/view.php') == true) &&
          ($COURSE->visible == false)) {
