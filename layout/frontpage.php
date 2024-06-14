@@ -24,7 +24,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+// user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
 
 if (isloggedin()) {
@@ -57,6 +59,6 @@ $templatecontext = [
     'loginbuttontext' => $loginbuttontext
 ];
 
-$templatecontext['flatnavigation'] = $PAGE->flatnav;
+
 echo $OUTPUT->render_from_template('theme_boostwarwick/frontpage', $templatecontext);
 
